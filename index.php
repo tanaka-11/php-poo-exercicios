@@ -4,11 +4,6 @@
 
     // Guardando a classe
     $livro = new Livro;
-    
-    // Metodos setter
-    $livro->setTitulo('Percy Jackson');
-    $livro->setAutor('Rick Riordan');
-    $livro->setPaginas('336');
 
 ?>
 
@@ -24,12 +19,7 @@
 </head>
 
 <body>
-    <!-- Metodo Getter -->
-    <ul>
-        <li>Titulo: <?=$livro->getTitulo()?></li>
-        <li>Autor: <?=$livro->getAutor()?></li>
-        <li>Paginas: <?=$livro->getPaginas()?></li>
-    </ul>
+ 
 </body>
 
 </html>
