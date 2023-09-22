@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <pre> <?=?> </pre>
+  
 </body>
 
 </html>
