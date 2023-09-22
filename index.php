@@ -5,6 +5,12 @@
     // Guardando a classe
     $livro = new Livro;
 
+    // Métodos com o return this/self permitem ENCADEAMENTO nas chamadas
+    // $livro->setTitulo('Tanaka')->setAutor('Eu');
+
+    // Sintaxe 1 por 1
+    $livro->setTitulo('Tanaka');
+    $livro->setAutor('Eu');    
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +25,7 @@
 </head>
 
 <body>
- 
+    <pre> <?=?> </pre>
 </body>
 
 </html>
