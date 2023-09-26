@@ -2,7 +2,7 @@
     // Importando a Classe
     require_once 'src/Livro.php';
 
-    // Guardando a classe
+    // Criação de objeto
     $livro = new Livro;
     
     // Metodos setter

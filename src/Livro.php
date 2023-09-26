@@ -1,6 +1,6 @@
 <?php
-// Criando a class Livro
-class Livro {
+// Criando a class abstrata Livro
+abstract class Livro {
     // Criando as propriedades
     private string $titulo;
     private string $autor;
