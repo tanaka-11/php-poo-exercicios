@@ -10,7 +10,8 @@
 
     // Sintaxe 1 por 1
     $livro->setTitulo('Tanaka');
-    $livro->setAutor('Eu');    
+    $livro->setAutor('Eu');
+    $livro->setPaginas('300');    
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,36 @@
 </head>
 
 <body>
-  
+<div class="artboard">
+ <div class="card">
+
+  <div class="card__side card__side--back">
+   <div class="card__cover">
+    <h4 class="card__heading">
+     <span class="card__heading-span">_Tanaka11_</span>
+    </h4>
+   </div>
+   <div class="card__details">
+        <ul>
+            <li><?=$livro->getAutor()?></li>
+            <li><?=$livro->getTitulo()?></li>
+            <li><?=$livro->getPaginas()?></li>
+        </ul>    
+   </div>
+  </div>
+
+  <div class="card__side card__side--front">
+   <div class="card__theme">
+    <div class="card__theme-box">
+     <!-- <p class="card__subject">Tanaka</p> -->
+     <!-- <p class="card__title">Bia</p> -->
+    </div>
+   </div>
+  </div>
+
+ </div>
+</div>
+
 </body>
 
 </html>
