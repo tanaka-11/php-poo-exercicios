@@ -3,25 +3,15 @@
 require_once 'Livro.php';
 
 class Tecnico extends Livro {
-    // Criando as propriedades
-    private array $formato;
+    private array $formato = ["digital", "físico"];
 
-    // Definindo valores padrão para a propriedade com o construtor
-    public function __construct()
-    {
-        $this->formato = ["digital", "fisico"];
+    public function setFormato(array $formato): void {
+        $this->formato = $formato;
     }
-
-    public function getFormato(): array
-    {
+    
+    public function getFormato(): array {
         return $this->formato;
     }
 
-    public function setFormato($formato): self
-    {
-        $this->formato = $formato;
-
-        return $this;
-    }
-
 }
+
