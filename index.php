@@ -1,17 +1,19 @@
 <?php 
-// Importando as Classes
+// Importando a super-classe "Livro" e suas sub-classes
 require_once 'src/Livro.php';
 require_once 'src/Tecnico.php';
 require_once 'src/Programacao.php';
 require_once 'src/Didatico.php';
 
-// Criação de objeto Tecnico
+// Criação do objeto "Tecnico"
 $tecnico = new Tecnico();
+
+// Atribuindo valores ao objeto "Tecnico"
 $tecnico->setTitulo('Percy Jackson - A maldição do titã');
 $tecnico->setAutor('Rick Riordan');
 $tecnico->setPaginas(336);
 
-// Obtendo o formato
+// Obtendo o formato "digital" e "fisico"
 $formato = $tecnico->getFormato();
 
 // Criando uma instância da classe Programacao com valores iniciais
@@ -53,25 +55,51 @@ $nivelDidatico = implode(", ", $livroDidatico->getNivel());
 
 <body>
     <h1>Informações do Livro Técnico</h1>
-    <p><strong>Título:</strong> <?= $tecnico->getTitulo(); ?></p>
-    <p><strong>Autor:</strong> <?= $tecnico->getAutor(); ?></p>
-    <p><strong>Páginas:</strong> <?= $tecnico->getPaginas(); ?></p>
-    <p><strong>Formatos:</strong> <?= implode(", ", $formato); ?></p>
+    <p>
+        <b>Título:</b> <?= $tecnico->getTitulo() ?>
+    </p>
+    <p>
+        <b>Autor:</b> <?= $tecnico->getAutor() ?>
+    </p>
+    <p>
+        <b>Páginas:</b> <?= $tecnico->getPaginas() ?>
+    </p>
+    <p>
+        <b>Formatos:</b> <?= implode(", ", $formato) ?>
+    </p>
     <hr>
 
     <h1>Informações do Livro de Programação</h1>
-    <p><strong>Título:</strong> <?= $livroProgramacao->getTitulo(); ?></p>
-    <p><strong>Autor:</strong> <?= $livroProgramacao->getAutor(); ?></p>
-    <p><strong>Páginas:</strong> <?= $livroProgramacao->getPaginas(); ?></p>
-    <p><strong>Área:</strong> <?= $livroProgramacao->getArea(); ?></p>
+    <p>
+        <b>Título:</b> <?= $livroProgramacao->getTitulo() ?>
+    </p>
+    <p>
+        <b>Autor:</b> <?= $livroProgramacao->getAutor() ?>
+    </p>
+    <p>
+        <b>Páginas:</b> <?= $livroProgramacao->getPaginas() ?>
+    </p>
+    <p>
+        <b>Área:</b> <?= $livroProgramacao->getArea() ?>
+    </p>
     <hr>
 
     <h1>Informações do Livro Didatico</h1>
-    <p><strong>Título:</strong> <?= $tituloDidatico; ?></p>
-    <p><strong>Autor:</strong> <?= $autorDidatico; ?></p>
-    <p><strong>Páginas:</strong> <?= $paginasDidatico; ?></p>
-    <p><strong>Disciplina:</strong> <?= $disciplinaDidatico; ?></p>
-    <p><strong>Nível:</strong> <?= $nivelDidatico; ?></p>
+    <p>
+        <b>Título:</b> <?= $tituloDidatico ?>
+    </p>
+    <p>
+        <bg>Autor:</b> <?= $autorDidatico ?>
+    </p>
+    <p>
+        <b>Páginas:</b> <?= $paginasDidatico ?>
+    </p>
+    <p>
+        <b>Disciplina:</b> <?= $disciplinaDidatico ?>
+    </p>
+    <p>
+        <b>Nível:</b> <?= $nivelDidatico ?>
+    </p>
 
 </body>
 
