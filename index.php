@@ -23,7 +23,7 @@ $livroProgramacao->setTitulo("PHP POO - Programação Orientada a Objeto");
 $livroProgramacao->setAutor("M. Tanaka");
 $livroProgramacao->setPaginas("400");
 $livroProgramacao->setFormato(["digital"]);
-$livroProgramacao->setArea("PHP");
+$livroProgramacao->setArea("Back-End");
 
 // Metodos Setter da nossa outra sub-classe(Didatico) também herdada da nossa sub-classe(Tecnico).
 $livroDidatico->setTitulo("Voleibol");
