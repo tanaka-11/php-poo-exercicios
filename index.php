@@ -1,43 +1,39 @@
 <?php 
-// Importando a super-classe "Livro" e suas sub-classes
-require_once 'src/Livro.php';
+// Importando as sub-classes da nossa super-classe ABSTRATA, ou seja, uma classe abstrata não é permitido criar objetos a partir da (Livro). 
+// *Obs. Não precisamos importar a super-classe no index já que ela ja está presente na nossa classe "Tecnico".
 require_once 'src/Tecnico.php';
 require_once 'src/Programacao.php';
 require_once 'src/Didatico.php';
 
-// Criação do objeto "Tecnico"
-$tecnico = new Tecnico();
+// Criação dos objetos
+$livroTecnico = new Tecnico;
+$livroProgramacao = new Programacao;
+$livroDidatico = new Didatico;
 
-// Atribuindo valores ao objeto "Tecnico"
-$tecnico->setTitulo('Percy Jackson - A maldição do titã');
-$tecnico->setAutor('Rick Riordan');
-$tecnico->setPaginas(336);
+// Metodos Setter (Tecnico) HERDADOS da super-classe abstrata(Livro).
+$livroTecnico->setTitulo("Logica de Programação");
+$livroTecnico->setAutor("M. Tanaka");
+$livroTecnico->setPaginas("300");
 
-// Obtendo o formato "digital" e "fisico"
-$formato = $tecnico->getFormato();
+// Metodos Setter da propria sub-classe (Tecnico).
+$livroTecnico->setFormato(["digital" , "fisico"]);
 
-// Criando uma instância da classe Programacao com valores iniciais
-$livroProgramacao = new Programacao('Livro de Programação', 'Autor do Livro de Programação', 300, 'Área de Programação');
+// Metodos Setter da sub-classe(Programação) herdada de outra sub-classe(Tecnico).
+$livroProgramacao->setTitulo("PHP POO - Programação Orientada a Objeto");
+$livroProgramacao->setAutor("M. Tanaka");
+$livroProgramacao->setPaginas("400");
+$livroProgramacao->setFormato(["digital"]);
+$livroProgramacao->setArea("PHP");
 
-// Acessando as informações do objeto Programacao
-$tituloProgramacao = $livroProgramacao->getTitulo();
-$autorProgramacao = $livroProgramacao->getAutor();
-$paginasProgramacao = $livroProgramacao->getPaginas();
-$areaProgramacao = $livroProgramacao->getArea();
+// Metodos Setter da nossa outra sub-classe(Didatico) também herdada da nossa sub-classe(Tecnico).
+$livroDidatico->setTitulo("Voleibol");
+$livroDidatico->setAutor("M. Tanaka");
+$livroDidatico->setPaginas("120");
+$livroDidatico->setFormato(["fisico"]);
+$livroDidatico->setDisciplina("Educação Fisica");
+$livroDidatico->setNivel(["superior"]);
 
-// Criando uma instância da classe Didatico com valores iniciais
-$livroDidatico = new Didatico();
-$livroDidatico->setTitulo('Livro Didático de Matemática');
-$livroDidatico->setAutor('Autor do Livro Didático');
-$livroDidatico->setPaginas(200);
-$livroDidatico->setDisciplina('Matemática');
 
-// Acessando as informações do objeto Didatico
-$tituloDidatico = $livroDidatico->getTitulo();
-$autorDidatico = $livroDidatico->getAutor();
-$paginasDidatico = $livroDidatico->getPaginas();
-$disciplinaDidatico = $livroDidatico->getDisciplina();
-$nivelDidatico = implode(", ", $livroDidatico->getNivel());
 
 ?>
 
@@ -49,57 +45,50 @@ $nivelDidatico = implode(", ", $livroDidatico->getNivel());
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Exercicio 01 - Livro</title>
+    <title>Exercicio 02 - Livro</title>
 
 </head>
 
 <body>
-    <h1>Informações do Livro Técnico</h1>
-    <p>
-        <b>Título:</b> <?= $tecnico->getTitulo() ?>
-    </p>
-    <p>
-        <b>Autor:</b> <?= $tecnico->getAutor() ?>
-    </p>
-    <p>
-        <b>Páginas:</b> <?= $tecnico->getPaginas() ?>
-    </p>
-    <p>
-        <b>Formatos:</b> <?= implode(", ", $formato) ?>
-    </p>
+    <h1>Informações do Livro Tecnico</h1>
+    <ul>
+        <li><b>Nome do Autor: </b><?=$livroTecnico->getAutor()?></li>
+        <li><b>Titulo: </b><?=$livroTecnico->getTitulo()?></li>
+        <li><b>Paginas: </b><?=$livroTecnico->getPaginas()?></li>
+
+        <!-- Como neste metodo utilizamos o implode para conventer o array numa string, poderia ser feito tabem um foreach para conseguir acessar as informações do array ou passar os colchetes logo apos os parenteses. -->
+        <li><b>Formato: </b><?=$livroTecnico->getFormato()?></li>
+  
+    </ul>
     <hr>
 
     <h1>Informações do Livro de Programação</h1>
-    <p>
-        <b>Título:</b> <?= $livroProgramacao->getTitulo() ?>
-    </p>
-    <p>
-        <b>Autor:</b> <?= $livroProgramacao->getAutor() ?>
-    </p>
-    <p>
-        <b>Páginas:</b> <?= $livroProgramacao->getPaginas() ?>
-    </p>
-    <p>
-        <b>Área:</b> <?= $livroProgramacao->getArea() ?>
-    </p>
+    <ul>
+        <li><b>Nome do Autor:</b> <?=$livroProgramacao->getAutor()?></li>
+        <li><b>Titulo:</b> <?=$livroProgramacao->getTitulo()?></li>
+        <li><b>Area:</b> <?=$livroProgramacao->getArea()?></li>
+        <li><b>Paginas:</b> <?=$livroProgramacao->getPaginas()?></li>
+        <li><b>Formato:</b> <?=$livroProgramacao->getFormato()?></li>
+        
+    </ul>
     <hr>
 
     <h1>Informações do Livro Didatico</h1>
-    <p>
-        <b>Título:</b> <?= $tituloDidatico ?>
-    </p>
-    <p>
-        <bg>Autor:</b> <?= $autorDidatico ?>
-    </p>
-    <p>
-        <b>Páginas:</b> <?= $paginasDidatico ?>
-    </p>
-    <p>
-        <b>Disciplina:</b> <?= $disciplinaDidatico ?>
-    </p>
-    <p>
-        <b>Nível:</b> <?= $nivelDidatico ?>
-    </p>
+    <ul>
+        <li><b>Nome do Autor:</b> <?=$livroDidatico->getAutor()?></li>
+        <li><b>Titulo:</b> <?=$livroDidatico->getTitulo()?></li>
+        <li><b>Paginas:</b> <?=$livroDidatico->getPaginas()?></li>
+        <li><b>Formato:</b> <?=$livroDidatico->getFormato()?></li>
+        <li><b>Disciplina:</b> <?=$livroDidatico->getDisciplina()?></li>
+        
+        <!-- Aqui utilizamos o outro metodo citado no exemplo do livro Tecnico acessando as informações do array com o proprio loop  -->
+        <li>
+            <?php foreach($livroDidatico->getNivel() as $nivel) {?>
+                <b>Nivel:</b> <?=$nivel?>
+            <?php } ?>
+        </li>
+        
+    </ul>
 
 </body>
 

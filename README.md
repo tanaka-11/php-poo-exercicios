@@ -1,7 +1,7 @@
-# Exercicio 1 -
+# Exercicio 2 -
  
-Crie um arquivo index.php, importe a classe e crie pelo menos um objeto a partir dela, definindo um título, autor e número de páginas.
+- Implemente a subclasse Tecnico (herdando tudo da superclasse Livro) e adicione também suas próprias propriedades e métodos. Obs. veja que a propriedade formato é um array com valores pré-definidos.
 
-Mostre os dados na página usando tags HTML da maneira que preferir.
+- Implemente as subclasses Programacao e Didatico (herdando tudo da subclasse Tecnico) e adicione também suas próprias propriedades e métodos.
 
-img. de referencia
+- Na index.php, crie alguns objetos do tipo Tecnico, Programação e Didático e atribua alguns valores a eles. Em seguida, mostre alguns destes dados usando tags HTML
