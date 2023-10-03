@@ -1,6 +1,6 @@
 <?php 
 // Passando o use antes do require
-use Livros\{Livro, Tecnico, Programacao, Didatico, Web};
+use Livros\{Tecnico, Programacao, Didatico, Web};
 
 // Passando o require com o composer autoload
 require_once 'vendor/autoload.php';
