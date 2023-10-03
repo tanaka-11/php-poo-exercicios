@@ -2,7 +2,6 @@
 // Criação do namespace para utilização do composer
 namespace Livros;
 
-require_once 'src/Livro.php';
 class Tecnico extends Livro {
     private array $formato = ["digital", "físico"];
 

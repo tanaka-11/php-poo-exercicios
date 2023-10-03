@@ -1,17 +1,17 @@
 <?php 
-// Passando o use antes do require
+// Passando o use antes do require.
 use Livros\{Tecnico, Programacao, Didatico, Web};
 
-// Passando o require com o composer autoload
+// Passando o require com o composer autoload.
 require_once 'vendor/autoload.php';
 
-// Criação dos objetos
+// Criação dos objetos.
 $livroTecnico = new Tecnico;
 $livroProgramacao = new Programacao;
 $livroDidatico = new Didatico;
 $livroWeb = new Web;
 
-// Metodos Setter (Tecnico).
+// Metodos Setter da sub-classe(Tecnico).
 $livroTecnico->setTitulo("Logica de Programação");
 $livroTecnico->setAutor("M. Tanaka");
 $livroTecnico->setPaginas("300");
@@ -24,7 +24,7 @@ $livroProgramacao->setPaginas("400");
 $livroProgramacao->setFormato(["digital"]);
 $livroProgramacao->setArea("Back-End");
 
-// Metodos Setter da nossa outra sub-classe(Didatico).
+// Metodos Setter da nossa sub-classe(Didatico).
 $livroDidatico->setTitulo("Voleibol");
 $livroDidatico->setAutor("M. Tanaka");
 $livroDidatico->setPaginas("120");
@@ -32,7 +32,7 @@ $livroDidatico->setFormato(["fisico"]);
 $livroDidatico->setDisciplina("Educação Fisica");
 $livroDidatico->setNivel(["superior"]);
 
-// Metodos Setter da nossa sub-classe(Web)
+// Metodos Setter da nossa sub-classe(Web).
 $livroWeb->setTitulo("HTML e CSS");
 $livroWeb->setAutor("M. Tanaka");
 $livroWeb->setPaginas("300");
