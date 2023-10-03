@@ -1,4 +1,7 @@
 <?php
+// Criação do namespace para utilização do composer
+namespace Livros;
+
 // Definição da classe abstrata Livro
 abstract class Livro {
     private string $titulo;

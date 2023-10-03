@@ -1,0 +1,9 @@
+{
+    "name": "mtanaka/php-poo-exercicio",
+    "description": "Exercicio 3 de PHP POO",
+    "autoload": {
+        "psr-4": {
+            "Livros\\": "src/"
+        }
+    }
+}

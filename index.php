@@ -1,31 +1,30 @@
 <?php 
-// Importando as sub-classes da nossa super-classe ABSTRATA, ou seja, uma classe abstrata não é permitido criar objetos a partir da (Livro). 
-// *Obs. Não precisamos importar a super-classe no index já que ela ja está presente na nossa classe "Tecnico".
-require_once 'src/Tecnico.php';
-require_once 'src/Programacao.php';
-require_once 'src/Didatico.php';
+// Passando o use antes do require
+use Livros\{Livro, Tecnico, Programacao, Didatico, Web};
+
+// Passando o require com o composer autoload
+require_once 'vendor/autoload.php';
 
 // Criação dos objetos
 $livroTecnico = new Tecnico;
 $livroProgramacao = new Programacao;
 $livroDidatico = new Didatico;
+$livroWeb = new Web;
 
-// Metodos Setter (Tecnico) HERDADOS da super-classe abstrata(Livro).
+// Metodos Setter (Tecnico).
 $livroTecnico->setTitulo("Logica de Programação");
 $livroTecnico->setAutor("M. Tanaka");
 $livroTecnico->setPaginas("300");
-
-// Metodos Setter da propria sub-classe (Tecnico).
 $livroTecnico->setFormato(["digital" , "fisico"]);
 
-// Metodos Setter da sub-classe(Programação) herdada de outra sub-classe(Tecnico).
+// Metodos Setter da sub-classe(Programação).
 $livroProgramacao->setTitulo("PHP POO - Programação Orientada a Objeto");
 $livroProgramacao->setAutor("M. Tanaka");
 $livroProgramacao->setPaginas("400");
 $livroProgramacao->setFormato(["digital"]);
 $livroProgramacao->setArea("Back-End");
 
-// Metodos Setter da nossa outra sub-classe(Didatico) também herdada da nossa sub-classe(Tecnico).
+// Metodos Setter da nossa outra sub-classe(Didatico).
 $livroDidatico->setTitulo("Voleibol");
 $livroDidatico->setAutor("M. Tanaka");
 $livroDidatico->setPaginas("120");
@@ -33,6 +32,12 @@ $livroDidatico->setFormato(["fisico"]);
 $livroDidatico->setDisciplina("Educação Fisica");
 $livroDidatico->setNivel(["superior"]);
 
+// Metodos Setter da nossa sub-classe(Web)
+$livroWeb->setTitulo("HTML e CSS");
+$livroWeb->setAutor("M. Tanaka");
+$livroWeb->setPaginas("300");
+$livroWeb->setFormato(["fisico"], ["digital"]);
+$livroWeb->setArea("Programação");
 
 
 ?>
@@ -45,7 +50,7 @@ $livroDidatico->setNivel(["superior"]);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Exercicio 02 - Livro</title>
+    <title>Exercicio 03 - namespace e composer</title>
 
 </head>
 
@@ -88,6 +93,13 @@ $livroDidatico->setNivel(["superior"]);
             <?php } ?>
         </li>
         
+    </ul>
+    <hr>
+
+    <!-- Exibição dos dados da classe Web -->
+    <h1>Informações sobre o livro Web</h1>
+    <ul>
+        <pre> <?=var_dump($livroWeb)?> </pre>
     </ul>
 
 </body>

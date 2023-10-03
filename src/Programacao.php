@@ -1,7 +1,10 @@
 <?php
+// Criação do namespace para utilização do composer
+namespace Livros;
+
 require_once 'Tecnico.php';
 
-final class Programacao extends Tecnico {
+class Programacao extends Tecnico {
     private string $area;
 
     public function getArea(): string

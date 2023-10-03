@@ -1,4 +1,7 @@
 <?php
+// Criação do namespace para utilização do composer
+namespace Livros;
+
 require_once 'Tecnico.php';
 
 final class Didatico extends Tecnico {
