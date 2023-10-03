@@ -1,6 +1,6 @@
 {
-    "name": "mtanaka/php-poo-exercicio",
-    "description": "Exercicio 3 de PHP POO",
+    "name": "mtanaka/php-poo-exercicios",
+    "description": "Exercicio 3 utilizando namespace e composer",
     "autoload": {
         "psr-4": {
             "Livros\\": "src/"
